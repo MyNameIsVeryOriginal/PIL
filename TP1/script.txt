@@ -1,0 +1,20 @@
+> cat script.sh
+#!/bin/bash
+
+#init
+i=0
+#boucle
+while [ $i lt 10 ]
+do
+	i =$((i+1)) #increment
+	echo $i
+> lex commentaire-script.l
+> gcc lex..yy.c o commentaire-script -ll
+> ./commentaire-script < script.sh
+commentaire: "#!/bin/bash"
+commentaire: "# Init"
+commentaire: "# Boucle"
+commentaire: "# Incr"
+commentaire: "# Affiche"
+>
+
