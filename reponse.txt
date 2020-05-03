@@ -1,0 +1,40 @@
+ex1
+1/
+5 | -4.45 | 46E56 | -4.42E3
+
+2/
+Si cette modification est prise en comtpe, on ne sera pas capable de reconnaître les chiffres excepté 0.
+
+
+3/
+
+
+    E,e     +,-         0
+0 -----> 1 ------> 2 -------> 3 ==>
+                   |
+                   |        |-| 0,1,2,3,4,5,6,7,8,9
+                   |        | v      
+                   |-------> 4 
+            1,2,3,4,
+            5,6,7,8,9
+
+
+"
+|-|
+| V  " représentation d'une boucle 
+
+
+4/
+
+Le texte << }26"blab["-1.5,true >> possède le mot "true" reconnait par le programme 
+ligne " true {return TRUE;} " qui retourne donc true avec aucune erreur.
+
+Le texte << 6.25e-26{trois} >> possède "{trois}" qui n'est pas reconnu par le programme
+et qui renvoit donc l'erreur sur le premier caractère non reconnaissable.
+
+5/
+
+Comme MEMBERLIST_OPT ne contient pas d'autre règles que MEMBERLIST donc il n'y a pas de différence entre les deux.
+
+6/
+
