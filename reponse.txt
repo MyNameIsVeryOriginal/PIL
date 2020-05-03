@@ -3,7 +3,7 @@ ex1
 5 | -4.45 | 46E56 | -4.42E3
 
 2/
-Si cette modification est prise en comtpe, on ne sera pas capable de reconnaître les chiffres excepté 0.
+Si cette modification est prise en compte, on ne sera pas capable de reconnaître les chiffres excepté 0.
 
 
 3/
