@@ -34,7 +34,60 @@ et qui renvoit donc l'erreur sur le premier caractère non reconnaissable.
 
 5/
 
-Comme MEMBERLIST_OPT ne contient pas d'autre règles que MEMBERLIST donc il n'y a pas de différence entre les deux.
+MEMBERLIST est une grammaire récursive, toutes ses règles revient sur elle même.
+MEMBERLIST_OPT porte MEMBERLIST ou vide. Donc MEMBERLIST_OPT reconnait l'espace vide.
+MEMBERLIST_OPT peut être nul alors que MEMBERLIST ne peut être nul.
 
 6/
+
+a)
+    O_BEGIN
+    |
+    |- O_END 
+
+Cette suite ne pose pas problème car MEMBERLIST_OPT est vide et donc ne renvoit pas d'erreur.
+
+b)
+    O_BEGIN
+    |
+    |-NAME
+    |   |- COLON
+    |   |- NUMBER
+    |   |- COMMA
+    |
+    |-NAME
+    |   |- COLON
+    |   |- OTHER_STRING
+    |   |- COMMA
+    |
+    |-NAME
+    |   |- COLON
+    |   |- O_BEGIN
+    |       |- NAME
+    |       |    |- COLON
+    |       |    |- TRUE
+    |       |- O_END
+    |
+    |- O_END    
+
+Cette suite ne pose pas de problème, elle respecte bien les règles imposées par les grammaires définies.
+
+c)
+
+    O_BEGIN
+    |
+    |- NAME
+    |   |- COLON
+    |       
+    |- NAME
+    |   |- COMMA      <<- Erreur de syntaxe
+    |   |- NUMBER
+    |   |- COLON
+    |   |- OTHER_STRING
+    |
+    |- O_END
+
+Dans cet suite, MEMBER doit commencer par NAME suivi d'un COLON alors qu'ici, est suivi par COMMA.
+Cette suite viole la règle de MEMBER.
+
 
