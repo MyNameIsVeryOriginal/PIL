@@ -1,8 +1,19 @@
+(*
+   NOM: NGUYEN                 
+   Prénom: Minh Kha                 
+   L2 Info Groupe 2                 
+                    *)
+
+                                DM Principe d'Interprétation des Langages
+
 ex1
+
 1/
+
 5 | -4.45 | 46E56 | -4.42E3
 
 2/
+
 Si cette modification est prise en compte, on ne sera pas capable de reconnaître les chiffres excepté 0.
 
 
@@ -14,7 +25,7 @@ Si cette modification est prise en compte, on ne sera pas capable de reconnaîtr
                    |
                    |        |-| 0,1,2,3,4,5,6,7,8,9
                    |        | v      
-                   |-------> 4 
+                   |-------> 4 ==>
             1,2,3,4,
             5,6,7,8,9
 
@@ -90,4 +101,37 @@ c)
 Dans cet suite, MEMBER doit commencer par NAME suivi d'un COLON alors qu'ici, est suivi par COMMA.
 Cette suite viole la règle de MEMBER.
 
+Ex2
+
+1) Les tables Premier et Suivant de G 
+
+Premier()   |   Initialisation  |  Itération 1  |   Itération2  |  Itération3   |
+S           |                   |               |     a,b,c     |               |  
+A           |       ε           |       a       |               |               |
+B           |                   |      b,c      |               |               |
+C           |       ε           |       c       |               |               |
+
+
+Suivant()   |   Initialisation  |   Itération 1 |   Itération2  |   Itération3  |
+S           |                   |       $       |               |               |
+A           |                   |     b,c,$     |               |               |
+B           |                   |    c,$,a,b    |               |               |
+C           |                   |       $       |               |               |
+
+on a en conclusion 
+
+            |     Premier()     |   Suivant()   |   
+S           |       a,b,c       |       $       |
+A           |        ε,a        |     b,c,$     |
+B           |        b,c        |    c,$,a,d    |  
+C           |        ε,c        |       $       |
+
+2) La table d'analyse LL(1) de G
+
+
+LL(1)       |       a       |       b       |       c       |       $       |
+S           |    S -> ABC   |    S -> ABC   |    S -> ABC   |               | 
+A           |    A -> a     |               |               |     A -> ε    |    
+B           |               |    B -> bBab  |    B -> c     |               |
+C           |               |               |    C -> cA    |     C -> ε    |
 
