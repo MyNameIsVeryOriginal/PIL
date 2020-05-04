@@ -135,3 +135,25 @@ A           |    A -> a     |               |               |     A -> ε    |
 B           |               |    B -> bBab  |    B -> c     |               |
 C           |               |               |    C -> cA    |     C -> ε    |
 
+3)
+
+acc : S -> ABC tel que 
+A -> a ; B -> c ; C -> cA , A -> ε
+
+
+Pour annalyser bbcabab on va la décomposer de la manière suivante 
+bbcabab : S -> ABC tel que
+
+εbbcababε avec A -> ε et C -> ε
+
+B -> b bcaba b qui est la forme bBAb de B 
+
+on a donc: 
+BA -> bcaba
+B -> bcab
+A -> a 
+
+B-> bcab qui est la forme bBAb de B 
+BA -> ca 
+B -> c 
+A -> a 
